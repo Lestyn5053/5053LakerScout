@@ -1,60 +1,106 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<title>Laker Scout</title>
-<link href="../jQuery Mobile/jquery.mobile.theme-1.4.5.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Transdmin Light</title>
+
+<!-- CSS -->
+<link href="style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie7.css" /><![endif]-->
+
+<!-- JavaScripts-->
+<script type="text/javascript" src="style/js/jquery.js"></script>
+<script type="text/javascript" src="style/js/jNice.js"></script>
 </head>
 
 <body>
-
-<div class="container">
-  <header>
-    <a href="#"><img src="" alt="Insert Logo Here" width="180" height="90" id="Insert_logo" style="background: #C6D580; display:block;" /></a>
-  </header>
-  <div class="sidebar1">
-    <nav>
-      <ul>
-        <li><a href="#">Link one</a></li>
-        <li><a href="#">Link two</a></li>
-        <li><a href="#">Link three</a></li>
-        <li><a href="#">Link four</a></li>
-      </ul>
-    </nav>
-    <aside>
-      <p> The above links demonstrate a basic navigational structure using an unordered list styled with CSS. Use this as a starting point and modify the properties to produce your own unique look. If you require flyout menus, create your own using a Spry menu, a menu widget from Adobe's Exchange or a variety of other javascript or CSS solutions.</p>
-      <p>If you would like the navigation along the top, simply move the ul to the top of the page and recreate the styling.</p>
-    </aside>
-  <!-- end .sidebar1 --></div>
-  <article class="content">
-    <h1>Instructions</h1>
-    <section>
-     <h2>How to use this document</h2>
-      <p>Be aware that the CSS for these layouts is heavily commented. If you do most of your work in Design view, have a peek at the code to get tips on working with the CSS for the fixed layouts. You can remove these comments before you launch your site. To learn more about the techniques used in these CSS Layouts, read this article at Adobe's Developer Center - <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
-    </section>
-    <section>
-      <h2>Clearing Method</h2>
-      <p>Because all the columns are floated, this layout uses a clear:both declaration in the footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect. </p>
-    </section>
-    <section>
-      <h2>Logo Replacement</h2>
-      <p>An image placeholder was used in this layout in the header where you'll likely want to place  a logo. It is recommended that you remove the placeholder and replace it with your own linked logo. </p>
-      <p> Be aware that if you use the Property inspector to navigate to your logo image using the SRC field (instead of removing and replacing the placeholder), you should remove the inline background and display properties. These inline styles are only used to make the logo placeholder show up in browsers for demonstration purposes. </p>
-      <p>To remove the inline styles, make sure your CSS Styles panel is set to Current. Select the image, and in the Properties pane of the CSS Styles panel, right click and delete the display and background properties. (Of course, you can always go directly into the code and delete the inline styles from the image or placeholder there.)</p>
-    </section>
-    <section>
-      <h2>Backgrounds</h2>
-      <p>By nature, the background color on any block element will only show for the length of the content. This means if you're using a background color or border to create the look of a side column, it won't extend all the way to the footer but will stop when the content ends. If the .content block will always contain more content, you can place a border on the .content block to divide it from the column.</p>
-    </section>
-    <!-- end .content --></article>
-  <footer>
-    <p>This footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
-    <address>
-      Address Content
-    </address>
-  </footer>
-  <!-- end .container --></div>
+	<div id="wrapper">
+    	<!-- h1 tag stays for the logo, you can use the a tag for linking the index page -->
+    	<h1><a href="#"><span>Transdmin Light</span></a></h1>
+        
+        <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
+        <ul id="mainNav">
+        	<li><a href="#" class="active">DASHBOARD</a></li> <!-- Use the "active" class for the active menu item  -->
+        	<li><a href="#">ADMINISTRATION</a></li>
+        	<li><a href="#">DESIGN</a></li>
+        	<li><a href="#">OPTION</a></li>
+        	<li class="logout"><a href="#">LOGOUT</a></li>
+        </ul>
+        <!-- // #end mainNav -->
+        
+        <div id="containerHolder">
+			<div id="container">
+        		<div id="sidebar">
+                	<ul class="sideNav">
+                    	<li><a href="#">Exchange</a></li>
+                    	<li><a href="#" class="active">Print resources</a></li>
+                    	<li><a href="#">Training &amp; Support</a></li>
+                    	<li><a href="#">Books</a></li>
+                    	<li><a href="#">Safari books online</a></li>
+                    	<li><a href="#">Events</a></li>
+                    </ul>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->
+                
+                <!-- h2 stays for breadcrumbs -->
+                <h2><a href="#">Dashboard</a> &raquo; <a href="#" class="active">Print resources</a></h2>
+                
+                <div id="main">
+                	<form action="" class="jNice">
+					<h3>Sample section</h3>
+                    	<table cellpadding="0" cellspacing="0">
+							<tr>
+                                <td>Vivamus rutrum nibh in felis tristique vulputate</td>
+                                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                            </tr>                        
+							<tr class="odd">
+                                <td>Duis adipiscing lorem iaculis nunc</td>
+                                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                            </tr>                        
+							<tr>
+                                <td>Donec sit amet nisi ac magna varius tempus</td>
+                                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                            </tr>                        
+							<tr class="odd">
+                                <td>Duis ultricies laoreet felis</td>
+                                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                            </tr>                        
+							<tr>
+                                <td>Vivamus rutrum nibh in felis tristique vulputate</td>
+                                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                            </tr>                        
+                        </table>
+					<h3>Another section</h3>
+                    	<fieldset>
+                        	<p><label>Sample label:</label><input type="text" class="text-long" /></p>
+                        	<p><label>Sample label:</label><input type="text" class="text-medium" /><input type="text" class="text-small" /><input type="text" class="text-small" /></p>
+                            <p><label>Sample label:</label>
+                            <select>
+                            	<option>Select one</option>
+                            	<option>Select two</option>
+                            	<option>Select tree</option>
+                            	<option>Select one</option>
+                            	<option>Select two</option>
+                            	<option>Select tree</option>
+                            </select>
+                            </p>
+                        	<p><label>Sample label:</label><textarea rows="1" cols="1"></textarea></p>
+                            <input type="submit" value="Submit Query" />
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- // #main -->
+                
+                <div class="clear"></div>
+            </div>
+            <!-- // #container -->
+        </div>	
+        <!-- // #containerHolder -->
+        
+        <p id="footer">Feel free to use and customize it. <a href="http://www.perspectived.com">Credit is appreciated.</a></p>
+    </div>
+    <!-- // #wrapper -->
 </body>
 </html>
