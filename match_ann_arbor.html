@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Laker Scout</title>
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script src="jquery.js"></script>
+	<script src="jquery.mobile-1.4.5.min.js"></script>
+	<script>
+		$( document ).on( "pagecreate", function() {
+			$( "#theme-selector input" ).on( "change", function( event ) {
+				var themeClass = $( "#theme-selector input:checked" ).attr( "id" );
+
+				$( "#testpage" ).removeClass( "ui-page-theme-a ui-page-theme-b" ).addClass( "ui-page-theme-" + themeClass );
+				$( "#ui-body-test" ).removeClass( "ui-body-a ui-body-b" ).addClass( "ui-body-" + themeClass );
+				$( "#ui-bar-test, #ui-bar-form" ).removeClass( "ui-bar-a ui-bar-b" ).addClass( "ui-bar-" + themeClass );
+				$( ".ui-collapsible-content" ).removeClass( "ui-body-a ui-body-b" ).addClass( "ui-body-" + themeClass );
+				$( ".theme" ).text( themeClass );
+			});
+			$( "#opt-shadow input" ).on( "change", function( event ) {
+				if ( $( "#on" ).prop( "checked" ) ) {
+					$( "#testpage" ).removeClass( "noshadow" );
+				} else if ( $( "#off" ).prop( "checked" ) ) {
+					$( "#testpage" ).addClass( "noshadow" );
+				}
+			});
+			$( "#opt-navbars input" ).on( "change", function( event ) {
+				if ( $( "#show" ).prop( "checked" ) ) {
+					$( "#testpage .ui-navbar" ).show();
+					$( "#testpage .ui-footer h4" ).hide();
+				} else if ( $( "#hide" ).prop( "checked" ) ) {
+					$( "#testpage .ui-navbar" ).hide();
+					$( "#testpage .ui-footer h4" ).show();
+				}
+			});
+		});
+	</script>
+	<style>
+		.noshadow * {
+			-webkit-box-shadow: none !important;
+			-moz-box-shadow: none !important;
+			box-shadow: none !important;
+		}
+		form.ui-mini .ui-field-contain fieldset.ui-controlgroup legend small {
+			color: #666;
+		}
+		 * {
+    padding: 0;
+    margin: 0;
+  }
+  .fit { /* set relative picture size */
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .center {
+    display: block;
+    margin: auto;
+  }
+  /*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+	</style>
+</head>
+<body>
+<div data-role="page" id="testpage">
+
+	<div data-role="header">
+		<h1>Match Scouting</h1>
+                <a href="scout_ann_arbor.html" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left">Back</a>
+                 <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-right ui-icon-check">Submit</a>
+	</div><!-- /header -->
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Basic Info</a></li>
+        <li><a href="#tab2">Autonomous</a></li>
+        <li><a href="#tab3">Teleoperated</a></li>
+        <li><a href="#tab4">End Game</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+        			<div class="ui-field-contain">
+				<label for="name">Your Name:</label>
+				<input type="text" name="name" id="name" value="" data-clear-btn="true">
+			</div>
+            		<div class="ui-field-contain">
+				<label for="team">Team Number:</label>
+				<input type="text" name="team" id="team" value="" data-clear-btn="true">
+			</div>
+            		<div class="ui-field-contain">
+				<label for="match">Match Number:</label>
+				<input type="text" name="match" id="match" value="" data-clear-btn="true">
+			</div>
+        </div>
+ 
+        <div id="tab2" class="tab">
+            <h2>Defenses</h2>
+        		<div class="ui-field-contain">
+				<label for="flip2">Reached?</label>
+				<select name="flip2" id="flip2" data-role="flipswitch">
+					<option value="off">No</option>
+					<option value="on">Yes</option>
+				</select>
+			</div>
+            <h2>Boulders</h2>
+        </div>
+ 
+        <div id="tab3" class="tab">
+            <h2>Defenses</h2>
+            <h2>Boulders</h2>
+        </div>
+ 
+        <div id="tab4" class="tab">
+        			<div class="ui-field-contain">
+				<label for="flip2">Challenged Tower?</label>
+				<select name="flip2" id="flip2" data-role="flipswitch">
+					<option value="off">No</option>
+					<option value="on">Yes</option>
+				</select>
+			</div>
+            <div class="ui-field-contain">
+				<label for="flip2">Full Scale?</label>
+				<select name="flip2" id="flip2" data-role="flipswitch">
+					<option value="off">No</option>
+					<option value="on">Yes</option>
+				</select>
+			</div>
+            <div class="ui-field-contain">
+				<label for="textarea2">Comments:</label>
+				<textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+			</div>
+        </div>
+    </div>
+</div><!-- /page -->
+
+</body>
+</html>
