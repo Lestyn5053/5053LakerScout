@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="jquery.js"></script>
+    <script src="index.js"></script>
 	<script src="jquery.mobile-1.4.5.min.js"></script>
 	<script>
 		$( document ).on( "pagecreate", function() {
@@ -124,17 +125,16 @@
                 <a href="scout_ann_arbor.html" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left">Back</a>
                  <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-right ui-icon-check">Submit</a>
 	</div><!-- /header -->
-<div role="main" class="ui-content">
 <div data-role="tabs" id="tabs">
 		      <div data-role="navbar">
 			    <ul>
-			      <li><a href="#one" data-ajax="false">Basic Info</a></li>
-			      <li><a href="#two" data-ajax="false">Auto</a></li>
-			      <li><a href="#three" data-ajax="false">Teleop</a></li>
-                  <li><a href="#four" data-ajax="false">End Game</a></li>
+			      <li class = "ui-block-a ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="one" aria-labelledby="ui-id-1" aria-selected="true"><a href="#one" data-ajax="false" class="ui-link ui-btn ui-tabs-anchor ui-btn-active" role="presentation" tabindex="-1" id="ui-id-1">Basic Info</a></li>
+			       <li class = "ui-block-b ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="two" aria-labelledby="ui-id-2" aria-selected="false"><a href="#two" data-ajax="false" class="ui-link ui-btn ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Auto</a></li>
+				   <li class = "ui-block-c ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="three" aria-labelledby="ui-id-3" aria-selected="false"><a href="#three" data-ajax="false" class="ui-link ui-btn ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Teleop</a></li>
+				  <li class = "ui-block-d ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="four" aria-labelledby="ui-id-4" aria-selected="false"><a href="#four" data-ajax="false" class="ui-link ui-btn ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">End Game</a></li>
 			    </ul>
 		      </div>
-              <div id="one" class="ui-body-d ui-content">
+              <div id="one" class="ui-body-d ui-content ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="true" aria-hidden="false">
                      	<div class="ui-field-contain">
 				<label for="name">Your Name:</label>
 				<input type="text" name="name" id="name" value="" data-clear-btn="true">
@@ -209,7 +209,6 @@
 				<textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
 			</div>
             </div>
-            </div>
 </div>
 <!--<div class="tabs">
     <ul class="tab-links">
@@ -270,9 +269,9 @@
             <div class="ui-field-contain">
 				<label for="textarea2">Comments:</label>
 				<textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
-			</div>-->
+			</div>
         </div>
-    </div>
+    </div>-->
 </div><!-- /page -->
 
 </body>
