@@ -9785,7 +9785,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 		define( "jquery", [], function () { return jQuery; } );
 	}
 }
-//THIS IS FOR THE TABS ON THE SCOUTING SHEETS!
+//THIS IS FOR THE OLD TABS ON THE SCOUTING SHEETS!
 jQuery(document).ready(function() {
     jQuery('.tabs .tab-links a').on('click', function(e)  {
         var currentAttrValue = jQuery(this).attr('href');
